@@ -111,7 +111,7 @@ export default function Home() {
       <div className="w-full max-w-2xl"> {/* max-w-lg -> max-w-2xl로 너비 확장 */}
         <header className="mb-10 text-center">
           <h1 className="text-4xl font-extrabold mb-3 text-green-400"> {/* 폰트 강조 */}
-            KT&G 재무 데이터 스크래퍼
+            KT&G 재무 데이터 다운로드
           </h1>
           <p className="text-gray-300 text-lg">
             금융감독원 DART에서 연결재무상태표(CFS)와 연결손익계산서(CIS)를
