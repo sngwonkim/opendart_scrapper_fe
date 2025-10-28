@@ -107,20 +107,21 @@ export default function Home() {
 
   // 4. UI 렌더링 (JSX)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white p-10 px-4"> {/* px-4 추가 */}
-      <div className="w-full max-w-2xl"> {/* max-w-lg -> max-w-2xl로 너비 확장 */}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white p-10 px-4">
+      {/* 기존: max-w-2xl -> 수정: max-w-4xl (훨씬 넓게) */}
+      <div className="w-full max-w-4xl p-6 sm:p-10"> 
         <header className="mb-10 text-center">
-          <h1 className="text-4xl font-extrabold mb-3 text-green-400"> {/* 폰트 강조 */}
-            KT&G 재무 데이터 다운로드
+          <h1 className="text-4xl font-extrabold mb-3 text-green-400">
+            KT&G 재무 데이터 스크래퍼
           </h1>
           <p className="text-gray-300 text-lg">
             금융감독원 DART에서 연결재무상태표(CFS)와 연결손익계산서(CIS)를
-            <br />
+            <br className="hidden sm:inline" /> {/* 모바일에서만 줄바꿈 숨기기 */}
             선택 기간별로 통합하여 하나의 CSV 파일로 추출합니다.
           </p>
         </header>
 
-        <form onSubmit={handleSubmit} className="w-full bg-gray-800 p-8 rounded-xl shadow-2xl"> {/* UI 디자인 강화 */}
+        <form onSubmit={handleSubmit} className="w-full bg-gray-800 p-8 rounded-xl shadow-2xl">
           <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-3">데이터 추출 기간 설정</h2>
           
           <div className="mb-8">
@@ -177,7 +178,7 @@ export default function Home() {
         {/* 에러 메시지만 하단에 표시 */}
         <div className="mt-6 w-full">
           {error && (
-            <div className="bg-red-900 text-white p-4 rounded-lg border-2 border-red-500 shadow-md"> {/* UI 개선 */}
+            <div className="bg-red-900 text-white p-4 rounded-lg border-2 border-red-500 shadow-md">
               <p className="font-bold mb-1">⚠️ 오류 발생</p>
               <p className="text-sm">{error}</p>
             </div>
